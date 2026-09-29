@@ -1,0 +1,259 @@
+/* --- Reseteo básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('../ASSETS/fondo.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+    background-attachment: fixed;
+    background-color: #faf7f5;
+    color: #3b2f2f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- 1. Encabezado enmarcado (Cakes NA) --- */
+.Encabezado {
+    width: 100%;
+    max-width: 950px;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #3b2f2f;
+    margin-bottom: 20px;
+}
+
+#main-title {
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: 2px solid #3b2f2f;
+    border-radius: 8px;
+    padding: 6px 30px;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* --- 2. Contenedor principal --- */
+.Cuerpo {
+    width: 100%;
+    max-width: 950px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- 3. Texto del Menú (Modifica aquí la palabra "Menu") --- */
+.Catalogo::before {
+    content: "Menu"; /* <--- Cambia el texto aquí */
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #3b2f2f;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    margin-bottom: 10px;
+}
+
+/* --- 4. Cuadrícula / Marco exterior del catálogo --- */
+.Catalogo {
+    width: 100%;
+    border: 2px solid #3b2f2f;
+    border-radius: 12px;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 5. Tarjetas de cada pastel --- */
+.Catalogo > div {
+    border: 1.5px solid #d4c5bd;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #fffcfb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+}
+
+/* Imagen del pastel */
+.Catalogo > div img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+/* Nombre del pastel */
+.Catalogo > div h2 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    color: #2b1d16;
+}
+
+/* Descripción del pastel */
+.Catalogo > div p {
+    font-size: 0.9rem;
+    color: #665651;
+    margin-bottom: 8px;
+    flex-grow: 1;
+}
+
+/* Precio en la tarjeta */
+.Catalogo > div .precio {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #a85834;
+    margin-bottom: 12px;
+    flex-grow: 0;
+}
+
+/* Botón de reservar */
+.btn {
+    background-color: #d17b58;
+    color: #ffffff;
+    border: none;
+    padding: 9px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 85%;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #b05e3d;
+}
+
+/* --- 6. Pie de página --- */
+footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 2px solid #3b2f2f;
+    font-size: 0.95rem;
+    color: #4f3f3a;
+}
+
+/* --- 7. Panel Modal Flotante --- */
+#modal-reserva {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+}
+
+.modal-oculto {
+    display: none !important;
+}
+
+.modal-contenido {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 480px;
+    position: relative;
+    border: 2px solid #3b2f2f;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #70635e;
+}
+
+.resumen-pastel {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1.5px solid #ece5e1;
+}
+
+#modal-img {
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #d4c5bd;
+}
+
+#modal-titulo {
+    font-size: 1.2rem;
+    color: #2b1d16;
+}
+
+.precio-destacado {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #a85834;
+}
+
+/* Formulario */
+#form-reserva {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#form-reserva label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #3b2f2f;
+    margin-top: 4px;
+}
+
+#form-reserva input {
+    padding: 8px 12px;
+    border: 1.5px solid #d4c5bd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+#form-reserva input:focus {
+    border-color: #a85834;
+}
+
+.btn-confirmar {
+    margin-top: 15px;
+    width: 100%;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+    .Catalogo {
+        grid-template-columns: 1fr;
+    }
+}

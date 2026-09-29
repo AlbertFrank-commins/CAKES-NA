@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasteles</title>
+    <link rel="stylesheet" href="/CSS/estilos.css">
+</head>
+    <body>
+    <header class="Encabezado">
+        <h1 id="main-title">Cakes NA</h1>
+    </header>
+            <main class="Cuerpo">
+                <section class="Catalogo">
+                    <div class="Tarjeta">
+                        <img src="https://www.cocinadelirante.com/sites/default/files/images/2023/08/receta-de-pastel-de-chocolate-facil.jpg" alt="Pastel de chocolate">
+                        <h2>Pastel de chocolate</h2>
+                        <p>Delicioso pastel de chocolate con relleno de crema.</p>
+                        <p class="precio">Precio: $15.00</p>
+                        <button type="button" class="btn">Reservar</button>
+                    </div>
+                    <div class="Tarjeta">
+                        <img src="https://cdn7.kiwilimon.com/recetaimagen/30163/32693.jpg" alt="Pastel de vainilla">
+                        <h2>Pastel de vainilla</h2>
+                        <p>Pastel de vainilla con cobertura de crema y frutas.</p>
+                        <p class="precio">Precio: $12.00</p>
+                        <button type="button" class="btn">Reservar</button>
+                    </div>
+                    <div class="Tarjeta">
+                        <img src="https://i.ytimg.com/vi/VYyDb1D4YPc/maxresdefault.jpg" alt="Pastel de fresa">
+                        <h2>Pastel de fresa</h2>
+                        <p>Pastel de fresa con cobertura de crema y frutas.</p>
+                        <p class="precio">Precio: $10.00</p>
+                        <button type="button" class="btn">Reservar</button>
+                    </div>
+                    <div class="Tarjeta">
+                        <img src="https://gustoysaludencadabocado.com/wp-content/uploads/2024/02/Portada-Tartas-Zanahoria-Madrid.jpg" alt="Pastel de zanahoria">
+                        <h2>Pastel de zanahoria</h2>
+                        <p>Delicioso pastel de zanahoria con relleno de crema.</p>
+                        <p class="precio">Precio: $12.00</p>
+                        <button type="button" class="btn">Reservar</button>
+                    </div>
+                    <div class="Tarjeta">
+                        <img src="https://lecaroz.com/wp-content/uploads/2025/12/pastel-dubai-2025-2-min-800x533.jpg" alt="Pastel de chocolate">
+                        <h2>Pastel de chocolate dubai</h2>
+                        <p>Delicioso pastel de chocolate con relleno de crema de abellana.</p>
+                        <p class="precio">Precio: $18.00</p>
+                        <button type="button" class="btn">Reservar</button>
+                    </div>
+                    <div class="Tarjeta">
+                        <img src="https://glutenfreegoddessrecipes.com/wp-content/uploads/2025/04/chocolate-flan-cake-recipe-1745133070.jpg" alt="Choco-Flan">
+                        <h2>Choco-Flan</h2>
+                        <p>Delicioso Flan con sabor a chocolate.</p>
+                        <p class="precio">Precio: $15.00</p>
+                        <button type="button" class="btn">Reservar</button>
+                    </div>
+                </section>
+                <footer>
+                    <p>&copy; 2024 Cakes NA. Donde Cada Sabor Es Una Aventura.</p>
+                </footer>
+            </main>
+                <!-- Modal / Panel de Reserva -->
+    <div id="modal-reserva" class="modal-oculto">
+        <div class="modal-contenido">
+            <button type="button" id="btn-cerrar" class="cerrar-modal">&times;</button>
+            
+            <div class="resumen-pastel">
+                <img id="modal-img" src="" alt="Pastel seleccionado">
+                <div>
+                    <h3 id="modal-titulo">Nombre Pastel</h3>
+                    <p id="modal-precio" class="precio-destacado">RD$ 0</p>
+                </div>
+            </div>
+
+            <form id="form-reserva">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" required placeholder="Tu nombre">
+
+                <label for="numero">Número de teléfono:</label>
+                <input type="tel" id="numero" required placeholder="809-000-0000">
+
+                <label for="direccion">Dirección de entrega:</label>
+                <input type="text" id="direccion" required placeholder="Calle, sector o referencia">
+
+                <label for="fecha">Fecha de entrega:</label>
+                <input type="date" id="fecha" required>
+
+                <button type="submit" class="btn btn-confirmar">Confirmar Reserva</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Enlace al JS -->
+    <script src="/JAVASCRIPT/config.js"></script>
+    </body>
+</html>
